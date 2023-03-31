@@ -10,5 +10,11 @@ namespace EscolaMVC.Models.Entities
         public Turma()
         {
         }
+
+        public Turma(List<Aluno> alunos, TipoTurno turno)
+        {
+            Alunos = alunos;
+            Turno = turno;
+        }
     }
 }
