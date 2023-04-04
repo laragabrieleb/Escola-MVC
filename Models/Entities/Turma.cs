@@ -4,6 +4,7 @@ namespace EscolaMVC.Models.Entities
 {
     public class Turma
     {
+        public Guid Id { get; set; }
         public List<Aluno> Alunos { get; set; }
         public TipoTurno Turno { get; set; }
 
@@ -11,8 +12,9 @@ namespace EscolaMVC.Models.Entities
         {
         }
 
-        public Turma(List<Aluno> alunos, TipoTurno turno)
+        public Turma(Guid id, List<Aluno> alunos, TipoTurno turno)
         {
+            Id = id;
             Alunos = alunos;
             Turno = turno;
         }

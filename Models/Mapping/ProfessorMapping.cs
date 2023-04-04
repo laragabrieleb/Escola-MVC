@@ -11,17 +11,17 @@ namespace EscolaMVC.Models.Mapping
         {
             builder.ToTable("Professores");
 
-            builder.HasKey(a => a.Id);
+            builder.HasKey(p => p.Id);
 
-            builder.Property(a => a.Id)
+            builder.Property(p => p.Id)
                    .HasValueGenerator<GuidValueGenerator>();
 
-            builder.Property(e => e.Nome)
-                   .IsRequired()
+            builder.Property(p => p.Nome)
                    .HasMaxLength(50)
-                   .HasColumnType("nvarchar");
+                   .HasColumnType("nvarchar")
+                   .IsRequired();
 
-            builder.Property(e => e.Turmas)
+            builder.Property(p => p.Turmas)
                    .IsRequired();
         }
     }

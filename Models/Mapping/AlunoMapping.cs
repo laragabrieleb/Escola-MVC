@@ -16,19 +16,19 @@ namespace EscolaMVC.Models.Mapping
             builder.Property(a => a.Id)
                    .HasValueGenerator<GuidValueGenerator>();
 
-            builder.Property(e => e.Nome)
-                   .IsRequired()
+            builder.Property(a => a.Nome)
                    .HasMaxLength(50)
-                   .HasColumnType("nvarchar");
-
-            builder.Property(e => e.Idade)
+                   .HasColumnType("nvarchar")
                    .IsRequired();
 
-            builder.Property(e => e.DataDeAniversario)
+            builder.Property(a => a.Idade)
+                   .IsRequired();
+
+            builder.Property(a => a.DataDeAniversario)
                    .IsRequired()
                    .HasColumnType("nvarchar");
 
-            builder.Property(e => e.TipoSanguineo)
+            builder.Property(a => a.TipoSanguineo)
                    .IsRequired();
         }
     }
