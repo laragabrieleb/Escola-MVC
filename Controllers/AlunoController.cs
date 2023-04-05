@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using EscolaMVC.Models.Entities;
 
 namespace EscolaMVC.Controllers
 {
@@ -6,6 +7,7 @@ namespace EscolaMVC.Controllers
     {
         public IActionResult Index()
         {
+            
             return View();
         }
     }
