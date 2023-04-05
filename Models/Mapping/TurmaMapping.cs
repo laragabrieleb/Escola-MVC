@@ -12,14 +12,13 @@ namespace EscolaMVC.Models.Mapping
 
             builder.HasKey(t => t.Id);
 
-            builder.Property(t => t.Alunos)
-                   .IsRequired()
-                   .HasMaxLength(50)
-                   .HasColumnType("nvarchar");
-
             builder.Property(t => t.Turno)
                    .IsRequired();
-                  
+
+            builder.HasMany(t => t.Alunos)
+                   .WithOne(t => t.Turma)
+                   .HasForeignKey(t => t.IdTurma);
+
         }
     }
 }

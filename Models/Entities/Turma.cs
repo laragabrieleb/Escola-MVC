@@ -7,16 +7,7 @@ namespace EscolaMVC.Models.Entities
         public Guid Id { get; set; }
         public List<Aluno> Alunos { get; set; }
         public TipoTurno Turno { get; set; }
-
-        public Turma()
-        {
-        }
-
-        public Turma(Guid id, List<Aluno> alunos, TipoTurno turno)
-        {
-            Id = id;
-            Alunos = alunos;
-            Turno = turno;
-        }
+        public Professor Professor { get; set; }
+        public Guid IdProfessor { get; set; }
     }
 }

@@ -4,26 +4,13 @@
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
+        public Turma Turma { get; set; }
+        public Guid IdTurma { get; set; }
         public int Idade { get; set; }
         public DateTime DataDeAniversario { get; set; }
         public string TipoSanguineo { get; set; }
         public string Complemento { get; set; }
-
         public Responsavel Responsável { get; set; }
-
-        public Aluno()
-        {
-        }
-
-        public Aluno(Guid id, string nome, int idade, DateTime dataDeAniversario, string tipoSanguineo)
-        {
-            Id = id;
-            Nome = nome;
-            Idade = idade;
-            DataDeAniversario = dataDeAniversario;
-            TipoSanguineo = tipoSanguineo;
-        }
-
-
+        public Guid IdResponsavel { get; set; }
     }
 }

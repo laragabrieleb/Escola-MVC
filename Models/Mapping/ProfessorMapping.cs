@@ -21,8 +21,9 @@ namespace EscolaMVC.Models.Mapping
                    .HasColumnType("nvarchar")
                    .IsRequired();
 
-            builder.Property(p => p.Turmas)
-                   .IsRequired();
+            builder.HasMany(p => p.Turmas)
+                   .WithOne(p => p.Professor)
+                   .HasForeignKey(p => p.IdProfessor);
         }
     }
 }
