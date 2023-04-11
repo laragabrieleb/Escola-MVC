@@ -12,6 +12,9 @@ namespace EscolaMVC.Models.Mapping
 
             builder.HasKey(t => t.Id);
 
+            builder.Property(t => t.MaximoAlunos)
+                   .IsRequired();
+
             builder.Property(t => t.Turno)
                    .IsRequired();
 

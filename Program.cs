@@ -1,4 +1,6 @@
 using EscolaMVC.Data;
+using EscolaMVC.IServices;
+using EscolaMVC.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
@@ -9,6 +11,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<MeuContexto>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IAlunoService, AlunoService>();
 
 var app = builder.Build();
 

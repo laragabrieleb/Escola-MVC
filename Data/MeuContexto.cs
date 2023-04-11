@@ -12,6 +12,12 @@ namespace EscolaMVC.Data
             this.configuration = configuration;
         }
 
+        public DbSet<Aluno> Aluno { get; set; }
+        public DbSet<Professor> Professor { get; set; }
+        public DbSet<Responsavel> Responsavel { get; set; }
+        public DbSet<Turma> Turma { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
