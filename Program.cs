@@ -13,6 +13,7 @@ builder.Services.AddDbContext<MeuContexto>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IAlunoService, AlunoService>();
+builder.Services.AddScoped<ITurmaService, TurmaService>(); 
 
 var app = builder.Build();
 

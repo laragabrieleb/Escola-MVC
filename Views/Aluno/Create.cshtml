@@ -1,0 +1,84 @@
+﻿@using EscolaMVC.Models.Entities;
+@using EscolaMVC.Enums;
+
+@model Aluno
+@{
+    ViewData["Title"] = "Informações do Aluno";
+}
+
+@*visualização da página referente a criação/adição de um aluno*@
+
+
+<h2>Informações do Aluno</h2>
+
+<hr />
+
+<div class="row">
+    <div class="col-lg-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Idade" class="control-label"></label>
+                <input asp-for="Idade" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataDeAniversario" class="control-label">Data De Aniversário</label>
+                <input asp-for="DataDeAniversario" class="form-control" />
+                <span asp-validation-for="DataDeAniversario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TipoSanguineo" class="control-label">Tipo Sanguíneo</label>
+                <input asp-for="TipoSanguineo" class="form-control" />
+                <span asp-validation-for="TipoSanguineo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Complemento" class="control-label"></label>
+                <input asp-for="Complemento" class="form-control" />
+                <span asp-validation-for="Complemento" class="text-danger"></span>
+            </div>
+
+            @*caixa de seleção para a turma*@
+            <div class="form-group">
+                <label asp-for="Turma" class="control-label"></label>
+                <select asp-for="Turma" asp-items="@(new SelectList(ViewBag.Turmas,"Turma","Turno"))" class="form-control"></select>
+                @*criar lista de turma para selecionar no formulário*@
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Responsavel.Nome" class="control-label">Nome do Responsável</label>
+                <input asp-for="Responsavel.Nome" class="form-control" />
+                <span asp-validation-for="Responsavel.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Responsavel.Contato" class="control-label">Contato do Responsável</label>
+                <input asp-for="Responsavel.Contato" class="form-control" />
+                <span asp-validation-for="Responsavel.Contato" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Responsavel.Endereco" class="control-label">Endereço</label>
+                <input asp-for="Responsavel.Endereco" class="form-control" />
+                <span asp-validation-for="Responsavel.Endereco" class="text-danger"></span>
+            </div>
+
+            @*botão de enviar*@
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create")'">Enviar</button>
+            </div>
+
+            @*botão de cancelar o registro do aluno*@
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index")'">Cancelar</button>
+        </form>
+    </div>
+</div>

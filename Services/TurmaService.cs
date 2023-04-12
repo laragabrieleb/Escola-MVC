@@ -16,13 +16,17 @@ namespace EscolaMVC.Services
 
         public async Task Create(Turma turma)
         {
+            //adicionar uma turma ao banco de dados e salvar alteração
             meuContexto.Add(turma);
             await meuContexto.SaveChangesAsync();
         }
 
+        // método que busca todos os registros da tabela turma e convertendo em uma lista assíncrona
         public async Task<List<Turma>> List()
         {
             return await meuContexto.Turma.ToListAsync();
         }
+
+
     }
 }

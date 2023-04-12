@@ -10,7 +10,7 @@
         public DateTime DataDeAniversario { get; set; }
         public string TipoSanguineo { get; set; }
         public string Complemento { get; set; }
-        public Responsavel Responsável { get; set; }
+        public Responsavel Responsavel { get; set; }
         public Guid IdResponsavel { get; set; }
     }
 }

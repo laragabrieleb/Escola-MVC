@@ -36,7 +36,7 @@ namespace EscolaMVC.Models.Mapping
                    .IsRequired()
                    .HasMaxLength(20);
 
-            builder.HasOne(a => a.Responsável)
+            builder.HasOne(a => a.Responsavel)
                    .WithOne()
                    .HasForeignKey<Aluno>(a => a.IdResponsavel);
                    

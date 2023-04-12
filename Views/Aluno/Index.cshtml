@@ -1,0 +1,84 @@
+﻿@using EscolaMVC.Models.Entities;
+
+@model List<Aluno>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*mostrar a lista de alunos*@
+<p>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create")'">Adicionar Aluno</button>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+               Nome
+            </th>
+            <th>
+               Idade
+            </th>
+            <th>
+               Data De Aniversário
+            </th>
+            <th>
+               Tipo Sanguíneo
+            </th>
+            <th>
+               Complemento
+            </th>
+            <th>
+               Nome Do Responsável
+            </th>
+            <th>
+               Contato Do Responsável
+            </th>
+            <th>
+               Endereço
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Nome
+                </td>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Idade
+                </td>
+                <td>
+                    @item.DataDeAniversario
+                </td>
+                <td>
+                    @item.TipoSanguineo
+                </td>
+                <td>
+                    @item.Complemento
+                </td>
+                <td>
+                    @item.Responsavel.Nome
+                </td>
+                <td>
+                    @item.Responsavel.Contato
+                </td>
+                <td>
+                    @item.Responsavel.Endereco
+                </td>
+                
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
