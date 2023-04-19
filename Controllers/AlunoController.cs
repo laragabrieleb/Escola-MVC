@@ -38,7 +38,7 @@ namespace EscolaMVC.Controllers
             return View();
         }
 
-        //create
+        
         //mostar opção de turma para o aluno
     }
 }

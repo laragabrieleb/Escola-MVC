@@ -6,6 +6,7 @@
 }
 
 @*mostrar a lista de alunos*@
+@*botão para adicionar aluno*@
 <p>
     <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create")'">Adicionar Aluno</button>
 </p>
@@ -46,9 +47,6 @@
             <tr>
                 <td>
                     @item.Nome
-                </td>
-                <td>
-                    @item.Id
                 </td>
                 <td>
                     @item.Idade

@@ -23,5 +23,20 @@ namespace EscolaMVC.Controllers
             var turmas = await meuContexto.Turma.ToListAsync();
             return View(turmas);
         }
+
+        //lógica para limitar alunos em uma turma
+        //public async Task<IActionResult> LimiteAlunos()
+        //{
+        //    var vagas = await meuContexto.tur
+        //    return View(vagas);
+        //}
+        public async Task<IActionResult> LimiteAlunos()
+        {
+            var vagas = await this.turmaService.List();
+
+            ViewBag.Turmas = vagas;
+
+            return View();
+        }
     }
 }
