@@ -5,6 +5,7 @@ using EscolaMVC.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace EscolaMVC.Controllers
 {
     public class TurmaController : Controller
@@ -16,6 +17,13 @@ namespace EscolaMVC.Controllers
         public TurmaController(MeuContexto contexto)
         {
             meuContexto = contexto;
+        }
+
+        public async Task<IActionResult> AddTurma()
+        {
+            ICollection<Turma> turmas = await this.turmaService.List();
+            ViewBag.Turmas = turmas;
+            return View();
         }
 
         public async Task<IActionResult> ListarTurmas()

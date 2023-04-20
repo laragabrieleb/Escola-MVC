@@ -50,6 +50,12 @@
             @*caixa de seleção para a turma*@
             <div class="form-group">
                 <label asp-for="Turma" class="control-label"></label>
+                <select id="turma" name="turma" class="form-control">
+                    @foreach (var turma in ViewBag.Turmas)
+                    {
+                        <option value="@turma.Id">@turma.Nome</option>
+                    }
+                </select>
                 <select asp-for="Turma" asp-items="@(new SelectList(ViewBag.Turmas,"Turma","Turno"))" class="form-control"></select>
                 @*criar lista de turma para selecionar no formulário*@
             </div>
