@@ -7,6 +7,11 @@ namespace EscolaMVC.Data
     {
         private readonly IConfiguration configuration;
 
+        public MeuContexto()
+        {
+
+        }
+
         public MeuContexto(DbContextOptions<MeuContexto> options, IConfiguration configuration) : base(options)
         {
             this.configuration = configuration;

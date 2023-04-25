@@ -10,23 +10,23 @@ namespace EscolaMVC.Controllers
 {
     public class TurmaController : Controller
     {
+        private readonly MeuContexto meuContexto;
         private readonly ITurmaService turmaService;
 
-        private readonly MeuContexto meuContexto;
-
-        public TurmaController(MeuContexto contexto)
+        public TurmaController(MeuContexto contexto, ITurmaService turmaService)
         {
             meuContexto = contexto;
+            this.turmaService = turmaService;
         }
 
-        public async Task<IActionResult> AddTurma()
+        public async Task<IActionResult> Create()
         {
-            ICollection<Turma> turmas = await this.turmaService.List();
+            List<Turma> turmas = await this.turmaService.List();
             ViewBag.Turmas = turmas;
             return View();
         }
 
-        public async Task<IActionResult> ListarTurmas()
+        public async Task<IActionResult> Index()
         {
             var turmas = await meuContexto.Turma.ToListAsync();
             return View(turmas);
