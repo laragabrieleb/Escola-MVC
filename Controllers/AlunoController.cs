@@ -38,7 +38,18 @@ namespace EscolaMVC.Controllers
             return View();
         }
 
-        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Aluno aluno)
+        {
+            await this.alunoService.Create(aluno);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        //buscar aluno
+
+
         //mostar opção de turma para o aluno
     }
 }

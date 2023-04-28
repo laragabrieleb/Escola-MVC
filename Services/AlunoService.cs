@@ -1,6 +1,7 @@
 ﻿using EscolaMVC.Data;
 using EscolaMVC.IServices;
 using EscolaMVC.Models.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EscolaMVC.Services
@@ -22,7 +23,7 @@ namespace EscolaMVC.Services
             await meuContexto.SaveChangesAsync();
         }
 
-        //buscando todos os registros da tabela alunos e convertendo em uma lista assíncrona
+        
         public async Task<List<Aluno>> List()
         {
             return await meuContexto.Aluno.ToListAsync();
