@@ -10,5 +10,10 @@ namespace EscolaMVC.Models.Entities
         public TipoTurno Turno { get; set; }
         public Professor Professor { get; set; }
         public Guid IdProfessor { get; set; }
+
+        public Turma()
+        {
+                
+        }
     }
 }

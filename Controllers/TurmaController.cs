@@ -21,10 +21,18 @@ namespace EscolaMVC.Controllers
 
         public async Task<IActionResult> Create()
         {
-            List<Turma> turmas = await this.turmaService.List();
-            ViewBag.Turmas = turmas;
+            //ToDo - Listar professores
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Turma turma)
+        {
+            await this.turmaService.Create(turma);
+
+            return RedirectToAction(nameof(Index));
+        }
+
 
         public async Task<IActionResult> Index()
         {
@@ -43,6 +51,16 @@ namespace EscolaMVC.Controllers
             var vagas = await this.turmaService.List();
 
             ViewBag.Turmas = vagas;
+
+            return View();
+        }
+
+        //add turma
+        public async Task<IActionResult> AddTurma()
+        {
+            var addTurma = await this.turmaService.List();
+
+            
 
             return View();
         }
