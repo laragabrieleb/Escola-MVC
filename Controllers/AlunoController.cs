@@ -17,7 +17,7 @@ namespace EscolaMVC.Controllers
         }
 
 
-        //método usado para obter a lista de alunos e exibir para o usuário
+        //método usado para obter a lista de alunos 
         public async Task <IActionResult> Index()
         {
             var alunos = await this.alunoService.List();
@@ -26,16 +26,8 @@ namespace EscolaMVC.Controllers
 
         public async Task<IActionResult> Create()
         {
-            //criar um turmaService - ok
-            //criar método de listar turmas no turma Service
-            //instanciar o TurmaService neste controller (igual fez com alunoService)
-            //chamar o método this.turmaService.List() e armazenar em uma ViewBag
-            //utilizar a viewbag lá no Create.cshtml
-            var turmas = await this.turmaService.List();
-
-            ViewBag.Turmas = turmas;
-
-            return View();
+            var turmas = await turmaService.List();
+            return View(turmas);
         }
 
         [HttpPost]
@@ -47,9 +39,5 @@ namespace EscolaMVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //buscar aluno
-
-
-        //mostar opção de turma para o aluno
     }
 }

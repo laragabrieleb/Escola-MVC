@@ -12,16 +12,18 @@ namespace EscolaMVC.Controllers
     {
         private readonly MeuContexto meuContexto;
         private readonly ITurmaService turmaService;
+        private readonly ProfessorService professorService;
 
-        public TurmaController(MeuContexto contexto, ITurmaService turmaService)
+        public TurmaController(MeuContexto contexto, ITurmaService turmaService, ProfessorService professorService)
         {
             meuContexto = contexto;
             this.turmaService = turmaService;
+            this.professorService = professorService;
         }
 
         public async Task<IActionResult> Create()
         {
-            //ToDo - Listar professores
+            var professor = await 
             return View();
         }
 
